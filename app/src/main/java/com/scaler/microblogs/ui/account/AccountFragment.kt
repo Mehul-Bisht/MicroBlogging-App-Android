@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.scaler.microblogs.databinding.FragmentAccountBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class AccountFragment : Fragment() {
 
-    private lateinit var accountViewModel: AccountViewModel
+    val viewModel by viewModel<AccountViewModel>()
     private var _binding: FragmentAccountBinding? = null
     private val binding get() = _binding!!
 

@@ -1,21 +1,21 @@
-package com.scaler.microblogs.ui.tags
+package com.scaler.microblogs.ui.auth
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.scaler.microblogs.databinding.FragmentTagsBinding
+import com.scaler.microblogs.databinding.FragmentLoginBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class TagsFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    val viewModel by viewModel<TagsViewModel>()
-    private var _binding: FragmentTagsBinding? = null
+    val viewModel by viewModel<AuthViewModel>()
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     companion object {
-        fun newInstance() = TagsFragment()
+        fun newInstance() = LoginFragment()
     }
 
     override fun onCreateView(
@@ -23,7 +23,7 @@ class TagsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentTagsBinding.inflate(inflater, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -32,5 +32,4 @@ class TagsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

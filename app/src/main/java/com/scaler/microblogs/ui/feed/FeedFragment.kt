@@ -8,10 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.scaler.microblogs.R
 import com.scaler.microblogs.databinding.FragmentFeedBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class FeedFragment : Fragment() {
 
-    private lateinit var feedViewModel: FeedViewModel
+    val viewModel by viewModel<FeedViewModel>()
     private var _binding: FragmentFeedBinding? = null
     private val binding get() = _binding!!
 
