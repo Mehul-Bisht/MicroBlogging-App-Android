@@ -4,17 +4,18 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class app : Application() {
+class TheApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
         startKoin {
-            androidContext(this@app)
+            androidContext(this@TheApplication)
             modules(
                 listOf(
                     authModule,
-                    appModule,
+                    apiModule,
+                    authRepositoryImplModule,
                     feedViewModel,
                     tagsViewModel,
                     accountViewModel
