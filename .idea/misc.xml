@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/activity_auth.xml" value="0.24864130434782608" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_login.xml" value="0.264" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_register.xml" value="0.264" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1855" />
         <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.2916666666666667" />
       </map>

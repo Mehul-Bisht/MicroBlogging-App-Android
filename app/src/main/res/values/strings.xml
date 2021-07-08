@@ -3,4 +3,18 @@
     <string name="title_feed">Feed</string>
     <string name="title_tags">Tags</string>
     <string name="title_account">Account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="proceed">Proceed</string>
+    <string name="go_to_signup">Create a new account</string>
+    <string name="go_to_login">Already have an account? Login</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password? Reset</string>
+    <string name="email_sent">A verification email has been sent to you.</string>
+    <string name="email_sent_verify">Please verify your email in order to proceed.</string>
+    <string name="verified_email">Your email has been verified!</string>
+    <string name="verified_email_description">You can proceed further now!</string>
+    <string name="unknown_error">An unknown error occurred, please try again!</string>
 </resources>
