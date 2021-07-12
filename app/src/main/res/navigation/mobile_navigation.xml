@@ -15,11 +15,34 @@
             android:id="@+id/nav_tags"
             android:name="com.scaler.microblogs.ui.tags.TagsFragment"
             android:label="@string/title_tags"
-            tools:layout="@layout/fragment_tags" />
+            tools:layout="@layout/fragment_tags" >
+        <action
+                android:id="@+id/action_nav_tags_to_tagsDetailsFragment"
+                app:destination="@id/tagsDetailsFragment" />
+    </fragment>
 
     <fragment
             android:id="@+id/nav_account"
             android:name="com.scaler.microblogs.ui.account.AccountFragment"
             android:label="@string/title_account"
-            tools:layout="@layout/fragment_account" />
+            tools:layout="@layout/fragment_account" >
+        <action
+                android:id="@+id/action_nav_account_to_accountEditFragment"
+                app:destination="@id/accountEditFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/tagsDetailsFragment"
+            android:name="com.scaler.microblogs.ui.tags.TagsDetailsFragment"
+            android:label="fragment_tags_details"
+            tools:layout="@layout/fragment_tags_details" >
+        <argument
+                android:name="tag"
+                app:argType="string"
+                app:nullable="true" />
+    </fragment>
+    <fragment
+            android:id="@+id/accountEditFragment"
+            android:name="com.scaler.microblogs.ui.account.AccountEditFragment"
+            android:label="fragment_account_edit"
+            tools:layout="@layout/fragment_account_edit" />
 </navigation>

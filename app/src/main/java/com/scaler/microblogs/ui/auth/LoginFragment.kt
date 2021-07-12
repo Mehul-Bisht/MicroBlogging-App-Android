@@ -1,5 +1,6 @@
 package com.scaler.microblogs.ui.auth
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import com.scaler.microblogs.Constants
 import com.scaler.microblogs.MainActivity
 import com.scaler.microblogs.databinding.FragmentLoginBinding
 import kotlinx.coroutines.async
@@ -94,12 +96,20 @@ class LoginFragment : Fragment() {
                         is AuthViewModel.LogInState.Success -> {
 
                             val data = status.response
+                            val token = data?.user?.token.toString()
 
-                            Log.d("login data ","""
-                                $data
-                            """.trimIndent())
+                            val sharedPrefs = requireActivity().getSharedPreferences(
+                                Constants.SIGN_IN_STATUS,
+                                Context.MODE_PRIVATE
+                            )
+
+                            val editor = sharedPrefs.edit()
+                            editor.putBoolean(Constants.SIGNED_IN,true)
+                            editor.putString(Constants.USER_TOKEN,token)
+                            editor.apply()
 
                             val intent = Intent(requireContext(), MainActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK.or(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                             startActivity(intent)
                         }
                     }

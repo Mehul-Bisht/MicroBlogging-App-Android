@@ -108,7 +108,8 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="@id/guide_end"
             app:layout_constraintStart_toStartOf="@id/guide_start"
-            app:layout_constraintTop_toBottomOf="@id/password" />
+            app:layout_constraintTop_toBottomOf="@id/password"
+            android:indeterminateTint="@color/blue"/>
 
     <TextView
             android:id="@+id/go_to_login"

@@ -98,6 +98,7 @@
             app:layout_constraintStart_toStartOf="@id/guide_start"
             app:layout_constraintEnd_toEndOf="@id/guide_end"
             android:layout_marginTop="16dp"
+            android:indeterminateTint="@color/blue"
             />
 
     <TextView

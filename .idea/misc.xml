@@ -3,10 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/drawable/card_bg.xml" value="0.2574074074074074" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/drawable/feed_bg.xml" value="0.24722222222222223" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/drawable/heart.xml" value="0.24722222222222223" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/drawable/heart_outline.xml" value="0.24722222222222223" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/drawable/transparent_bg_bordered.xml" value="0.2638888888888889" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/drawable/transparent_bg_bordered_button.xml" value="0.2638888888888889" />
         <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/activity_auth.xml" value="0.24864130434782608" />
-        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_account.xml" value="0.24003623188405798" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_account_edit.xml" value="0.2" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_feed.xml" value="0.24003623188405798" />
         <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_register.xml" value="0.264" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_tags.xml" value="0.24003623188405798" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/fragment_tags_details.xml" value="0.21105072463768115" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/item_feed.xml" value="0.2" />
+        <entry key="..\:/Users/hp/StudioProjects/MicroBlogging-App-Android/app/src/main/res/layout/item_tags.xml" value="0.23097826086956522" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1855" />
         <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.2916666666666667" />
       </map>

@@ -1,6 +1,8 @@
 package com.scaler.microblogs.ui.auth
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +12,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.scaler.microblogs.Constants
 import com.scaler.microblogs.MainActivity
 import com.scaler.microblogs.databinding.FragmentRegisterBinding
 import kotlinx.coroutines.async
@@ -102,7 +105,19 @@ class RegisterFragment : Fragment() {
 
                             val data = status.response
 
+                            val sharedPrefs = requireActivity().getSharedPreferences(
+                                Constants.SIGN_IN_STATUS,
+                                MODE_PRIVATE
+                            )
+
+                            val editor = sharedPrefs.edit()
+                            editor.putBoolean(Constants.SIGNED_IN,true)
+                            editor.putString(Constants.USER_TOKEN,data?.user?.token.toString())
+
+                            editor.apply()
+
                             val intent = Intent(requireContext(), MainActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK.or(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                             startActivity(intent)
                         }
                     }

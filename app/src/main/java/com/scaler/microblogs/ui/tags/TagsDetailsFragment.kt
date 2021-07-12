@@ -1,28 +1,27 @@
 package com.scaler.microblogs.ui.tags
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import com.scaler.microblogs.databinding.FragmentTagsBinding
-import com.scaler.microblogs.utils.Resource
+import com.scaler.microblogs.databinding.FragmentTagsDetailsBinding
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.collect
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class TagsFragment : Fragment() {
+class TagsDetailsFragment : Fragment() {
 
     val viewModel by viewModel<TagsViewModel>()
-    private var _binding: FragmentTagsBinding? = null
+    private var _binding: FragmentTagsDetailsBinding? = null
     private val binding get() = _binding!!
+    private val arg: TagsDetailsFragmentArgs by navArgs()
 
     companion object {
-        fun newInstance() = TagsFragment()
+        fun newInstance() = TagsDetailsFragment()
     }
 
     override fun onCreateView(
@@ -30,7 +29,7 @@ class TagsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentTagsBinding.inflate(inflater, container, false)
+        _binding = FragmentTagsDetailsBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -39,49 +38,45 @@ class TagsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getTags()
+        val tag = arg.tag as String
 
-        val adapter = TagsAdapter()
+        viewModel.searchTag(tag)
+
+        val adapter = TagDetailsAdapter(requireContext())
         adapter.setOnItemClick {
 
-            viewModel.searchByTag(it)
-            val action = TagsFragmentDirections.actionNavTagsToTagsDetailsFragment(it)
-            view.findNavController().navigate(action)
+
         }
 
         binding.recyclerview.adapter = adapter
 
         lifecycleScope.launchWhenStarted {
 
-            viewModel.tags.collect { state ->
+            viewModel.currentTagDetail.collect { state ->
 
                 when(state) {
 
-                    is TagsViewModel.TagsState.Initial -> Unit
+                    is TagsViewModel.TagsDetailState.Initial -> Unit
 
-                    is TagsViewModel.TagsState.Loading -> {
+                    is TagsViewModel.TagsDetailState.Loading -> {
 
-                        binding.progress.visibility = View.VISIBLE
+                     binding.progress.visibility = View.VISIBLE
                     }
 
-                    is TagsViewModel.TagsState.Success -> {
+                    is TagsViewModel.TagsDetailState.Success -> {
 
                         binding.progress.visibility = View.GONE
-                        adapter.submitList(state.tags)
+
+                        state.tagDetails?.let {
+                            adapter.submitList(it.articles)
+                        }
                     }
 
-                    is TagsViewModel.TagsState.Error -> {
+                    is TagsViewModel.TagsDetailState.Error -> {
 
                         binding.progress.visibility = View.GONE
                     }
                 }
-            }
-
-            viewModel.tagDetails.collect {
-
-                Log.d("dataa ","""
-                    $it
-                """.trimIndent())
             }
         }
     }

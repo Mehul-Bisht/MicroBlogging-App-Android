@@ -46,4 +46,10 @@ class ConduitClientTests {
         val response = api.getTags()
         assertNotNull(response)
     }
+
+    @Test
+    fun `GET User`() = runBlocking {
+        val user = api.getCurrentUser()
+        assertNotNull(user)
+    }
 }

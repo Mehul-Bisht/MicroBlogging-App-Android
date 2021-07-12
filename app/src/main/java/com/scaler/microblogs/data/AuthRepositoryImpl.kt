@@ -63,9 +63,6 @@ class AuthRepositoryImpl(
 
                 } catch (e: Exception) {
 
-                    Log.d("signup ","""
-                        $e
-                    """.trimIndent())
                     _signUpStatus.value = Resource.Error("An unknown error occurred!")
                 }
             }
@@ -104,9 +101,6 @@ class AuthRepositoryImpl(
 
                 } catch (e: Exception) {
 
-                    Log.d("login ","""
-                        $e
-                    """.trimIndent())
                     _loginStatus.value = Resource.Error("An unknown error occurred!")
                 }
             }

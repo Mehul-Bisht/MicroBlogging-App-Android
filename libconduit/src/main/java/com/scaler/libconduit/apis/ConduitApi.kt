@@ -16,7 +16,9 @@ interface ConduitApi {
     suspend fun registerUser(@Body userSignupRequest: UserSignupRequest): UserResponse
 
     @GET("user")
-    suspend fun getCurrentUser(): UserResponse
+    suspend fun getCurrentUser(
+        @Header("Authorization") token: String
+    ): UserResponse
 
     @PUT("user")
     suspend fun updateUserDetails(@Body userUpdateRequest: UserUpdateRequest): UserResponse
@@ -35,6 +37,9 @@ interface ConduitApi {
 
     @GET("articles/feed")
     suspend fun getFeedArticles(): MultipleArticleResponse
+
+    @GET("articles")
+    suspend fun getArticlesListByTag(@Query("tag") tag: String): MultipleArticleResponse
 
     @GET("articles/{slug}")
     suspend fun getArticleBySlug(

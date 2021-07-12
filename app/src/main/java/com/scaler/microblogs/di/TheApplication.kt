@@ -16,6 +16,7 @@ class TheApplication : Application() {
                     authModule,
                     apiModule,
                     authRepositoryImplModule,
+                    appRepositoryImplModule,
                     feedViewModel,
                     tagsViewModel,
                     accountViewModel
